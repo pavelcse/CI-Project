@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 03, 2018 at 06:50 PM
+-- Generation Time: Nov 04, 2018 at 08:51 PM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -30,22 +30,25 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tbl_projects` (
   `id` int(11) NOT NULL,
+  `project_user_id` int(11) NOT NULL,
   `project_name` varchar(255) NOT NULL,
-  `project_body` text NOT NULL
+  `project_body` text NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_projects`
 --
 
-INSERT INTO `tbl_projects` (`id`, `project_name`, `project_body`) VALUES
-(1, 'PHP', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.'),
-(2, 'HTML', 'Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.'),
-(3, 'CSS', 'Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.'),
-(4, 'JavaScript', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. '),
-(5, 'Laravel', 'Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo.'),
-(6, 'Codeigniter', 'Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes'),
-(7, 'VueJs', 'Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero');
+INSERT INTO `tbl_projects` (`id`, `project_user_id`, `project_name`, `project_body`, `created_at`) VALUES
+(1, 1, 'PHP', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', '2018-11-04 17:39:11'),
+(2, 0, 'HTML', 'Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.', '2018-11-04 17:39:11'),
+(3, 0, 'CSS', 'Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus.', '2018-11-04 17:39:11'),
+(4, 0, 'JavaScript', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. ', '2018-11-04 17:39:11'),
+(5, 0, 'Laravel', 'Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo.', '2018-11-04 17:39:11'),
+(6, 1, 'Codeigniter', 'Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc', '2018-11-04 17:39:11'),
+(7, 0, 'VueJs', 'Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero', '2018-11-04 17:39:11'),
+(8, 1, 'Bootstrap', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.', '2018-11-04 18:18:56');
 
 -- --------------------------------------------------------
 
@@ -96,7 +99,7 @@ ALTER TABLE `tbl_users`
 -- AUTO_INCREMENT for table `tbl_projects`
 --
 ALTER TABLE `tbl_projects`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tbl_users`
